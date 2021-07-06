@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "StIcgP5J8FKads3+AN1pmqgfAAboU7xzZ5U3GCjYi1xUQZ4wJwUnmXs8ajzG7neIS7hJ3Gb25vkTZaIiGLgN5Q==",
+  "dgSpecHash": "bI/ER+f7O9GtbizuSBMNed2GG2smwEENkAX+Nq+M/ED179L90MIIKyW3b6C01y8znOecO2d1X0GqZboZm36Oxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\StockManagement\\StockManagement\\StockManagement.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

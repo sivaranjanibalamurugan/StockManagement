@@ -1,0 +1,15 @@
+﻿{
+    "stockList": [
+        {
+            "companyName": "Ramco",
+            "numberOfShare": 40,
+            "sharePrice": 500
+        },
+
+        {
+            "companyName": "zoho",
+            "numberOfShare": 17,
+            "sharePrice": 100
+        }
+    ]
+}
