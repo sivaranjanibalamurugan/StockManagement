@@ -1,0 +1,16 @@
+C:\Users\user\source\repos\StockManagement\StockManagement\bin\Debug\net5.0\StockManagement.exe
+C:\Users\user\source\repos\StockManagement\StockManagement\bin\Debug\net5.0\StockManagement.deps.json
+C:\Users\user\source\repos\StockManagement\StockManagement\bin\Debug\net5.0\StockManagement.runtimeconfig.json
+C:\Users\user\source\repos\StockManagement\StockManagement\bin\Debug\net5.0\StockManagement.runtimeconfig.dev.json
+C:\Users\user\source\repos\StockManagement\StockManagement\bin\Debug\net5.0\StockManagement.dll
+C:\Users\user\source\repos\StockManagement\StockManagement\bin\Debug\net5.0\ref\StockManagement.dll
+C:\Users\user\source\repos\StockManagement\StockManagement\bin\Debug\net5.0\StockManagement.pdb
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.AssemblyInfo.cs
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.dll
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\ref\StockManagement.dll
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.pdb
+C:\Users\user\source\repos\StockManagement\StockManagement\obj\Debug\net5.0\StockManagement.genruntimeconfig.cache
