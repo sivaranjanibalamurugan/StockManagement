@@ -24,7 +24,7 @@ namespace StockManagement
         {
 
         }
-        public stockLinkedList(params StockUtilitty[] value)
+        public StockLinkedList(params StockUtilitty[] value)
         {
             foreach (StockUtilitty temp in value)
             {
@@ -72,13 +72,20 @@ namespace StockManagement
             StockUtilitty[] result = new StockUtilitty[count];
             int index = 0;
             Node temp = head;
-            while (temp.Next != null)
+            if (head == null)
             {
-                result[index++] = temp.value;
-                temp = temp.Next;
+                return result;
             }
-            result[index] = temp.value;
-            return result;
+            else
+            {
+                while (temp.Next != null)
+                {
+                    result[index++] = temp.value;
+                    temp = temp.Next;
+                }
+                result[index] = temp.value;
+                return result;
+            }
         }
 
         public void RemoveData(StockUtilitty stock)

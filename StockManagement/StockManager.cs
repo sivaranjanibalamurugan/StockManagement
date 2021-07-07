@@ -14,6 +14,7 @@ namespace StockManagement
     {
         StockLinkedList stockLinkedList;
         LinkedListStack stack;
+        LinkedQueue queue;
         StockUtilitty[] stocks1;
         int totalValue = 0;
         DateTime date;
@@ -21,9 +22,10 @@ namespace StockManagement
         {
             this.stockLinkedList = new StockLinkedList();
             this.stack = new LinkedListStack();
+            this.queue = new LinkedQueue();
         }
 
-        public void CreateNewStock()
+        public void CreateNewStock(StockManager stockManager)
         {
             
             //create the new share
@@ -39,12 +41,13 @@ namespace StockManagement
             stock.time = date.ToString("HH:mm:ss");
             stockLinkedList.AddLast(stock);
             stack.PushStack(stock.companyName, "Brought");
+            stockManager.Track(stock.companyName, "Brought", stock.date, stock.time);
 
         }
-        public void BuyShare(int amount, string company )
+        public void BuyShare(int amount, string company, StockManager stockManager)
         {
 
-            StockManager stockManager = new StockManager();
+            
             //create to buy share
             StockUtilitty stock = new StockUtilitty();
             int contains = 0;
@@ -75,15 +78,15 @@ namespace StockManagement
                 stock.time = date.ToString("HH:mm:ss");
                 stockLinkedList.AddLast(stock);
             }
-            stack.PushStack(company, "Brought");
+            stockManager.Track(company, "Brought", stock.date, stock.time);
 
         }
 
 
-        public void SellShare(int amount, string company )
+        public void SellShare(int amount, string company ,StockManager stockManager)
         {
 
-            StockManager stockManager = new StockManager();
+           
             //create to shell  share
             StockUtilitty stock = new StockUtilitty();
             int contains = 0;
@@ -115,13 +118,23 @@ namespace StockManagement
             }
             else
             {
-                stack.PushStack(company, "sold");
+                stockManager.Track(company, "Sold", stock.date, stock.time);
             }
 
+        }
+        //method to track the transaction that calls stack push and enqueue method
+        public void Track(string name, string action, string date, string time)
+        {
+            stack.PushStack(name, action);
+            queue.EnqueueData(name, date, time);
         }
         public void PuchaseDetail()
         {
             stack.PopStack();
+        }
+        public void TransactionDetail()
+        {
+            queue.Dequeue();
         }
         //to print report
         public  int PrintReport()
