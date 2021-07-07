@@ -13,9 +13,9 @@ namespace StockManagement
         public  void ReadInput()
         {
             StockManager StockManager = new StockManager();
-            string filePath = @"C:\Users\user\source\repos\StockManagement\StockManagement\Stock.Json";
-            StockUtilitty StockUtilitty = JsonConvert.DeserializeObject<StockUtilitty>(File.ReadAllText(filePath));
-
+            // string filePath = @"C:\Users\user\source\repos\StockManagement\StockManagement\Stock.Json";
+            // StockUtilitty StockUtilitty = JsonConvert.DeserializeObject<StockUtilitty>(File.ReadAllText(filePath));
+            StockUtilitty StockUtilitty = new StockUtilitty();
 
             bool CONTINUE = true;
 
@@ -26,17 +26,17 @@ namespace StockManagement
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Total share value :{0}", StockManager.PrintReport(StockUtilitty.StockList));
+                        Console.WriteLine("Total share value :{0}", StockManager.PrintReport());
                         break;
                     case 2:
-                        StockManager.CreateNewStock(StockUtilitty.StockList);
+                        StockManager.CreateNewStock();
                         break;
                     case 3:
-                        Console.WriteLine("Enter the name of Share:");
+                        Console.WriteLine("Enter the name of  company Share:");
                         string companyName = Console.ReadLine();
                         Console.WriteLine("Enter the number:");
                         int numberOfShare = Convert.ToInt32(Console.ReadLine());
-                        StockManager.BuyShare(numberOfShare, companyName, StockUtilitty.StockList);
+                        StockManager.BuyShare(numberOfShare, companyName);
                         break;
 
                     case 4:
@@ -44,7 +44,7 @@ namespace StockManagement
                         string company = Console.ReadLine();
                         Console.WriteLine("Enter the number:");
                         int numOfShare = Convert.ToInt32(Console.ReadLine());
-                        StockManager.SellShare(numOfShare, company, StockUtilitty.StockList);
+                        StockManager.SellShare(numOfShare, company);
                         break;
 
                     default:
