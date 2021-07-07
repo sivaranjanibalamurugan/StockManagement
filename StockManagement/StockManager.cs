@@ -13,12 +13,14 @@ namespace StockManagement
     class StockManager
     {
         StockLinkedList stockLinkedList;
+        LinkedListStack stack;
         StockUtilitty[] stocks1;
         int totalValue = 0;
         DateTime date;
         public StockManager()
         {
             this.stockLinkedList = new StockLinkedList();
+            this.stack = new LinkedListStack();
         }
 
         public void CreateNewStock()
@@ -36,6 +38,7 @@ namespace StockManagement
             stock.date = date.ToString("dd/MM/yyyy");
             stock.time = date.ToString("HH:mm:ss");
             stockLinkedList.AddLast(stock);
+            stack.PushStack(stock.companyName, "Brought");
 
         }
         public void BuyShare(int amount, string company )
@@ -72,6 +75,7 @@ namespace StockManagement
                 stock.time = date.ToString("HH:mm:ss");
                 stockLinkedList.AddLast(stock);
             }
+            stack.PushStack(company, "Brought");
 
         }
 
@@ -83,6 +87,7 @@ namespace StockManagement
             //create to shell  share
             StockUtilitty stock = new StockUtilitty();
             int contains = 0;
+            stocks1 = this.stockLinkedList.display();
             for (int i = 0; i < stocks1.Length; i++)
             {
                 if (stocks1[i].companyName.Equals(company) && amount < stocks1[i].numberOfShare)
@@ -100,6 +105,7 @@ namespace StockManagement
                     Console.WriteLine("since amount is less that available share enite share is sold ");
                     //if number of share is less than amount the remove the entire share
                     stockLinkedList.RemoveData(stocks1[i]);
+                    break;
                 }
             }
 
@@ -107,8 +113,15 @@ namespace StockManagement
             {
                 Console.WriteLine("No share is Available"); ;
             }
+            else
+            {
+                stack.PushStack(company, "sold");
+            }
 
-
+        }
+        public void PuchaseDetail()
+        {
+            stack.PopStack();
         }
         //to print report
         public  int PrintReport()
