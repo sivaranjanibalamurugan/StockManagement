@@ -29,14 +29,14 @@ namespace StockManagement
                         Console.WriteLine("Total share value :{0}", StockManager.PrintReport());
                         break;
                     case 2:
-                        StockManager.CreateNewStock();
+                        StockManager.CreateNewStock(StockManager);
                         break;
                     case 3:
                         Console.WriteLine("Enter the name of  company Share:");
                         string companyName = Console.ReadLine();
                         Console.WriteLine("Enter the number:");
                         int numberOfShare = Convert.ToInt32(Console.ReadLine());
-                        StockManager.BuyShare(numberOfShare, companyName);
+                        StockManager.BuyShare(numberOfShare, companyName, StockManager);
                         break;
 
                     case 4:
@@ -44,7 +44,7 @@ namespace StockManagement
                         string company = Console.ReadLine();
                         Console.WriteLine("Enter the number:");
                         int numOfShare = Convert.ToInt32(Console.ReadLine());
-                        StockManager.SellShare(numOfShare, company);
+                        StockManager.SellShare(numOfShare, company, StockManager);
                         break;
 
                     default:
